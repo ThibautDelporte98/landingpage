@@ -1,0 +1,26 @@
+{
+  "name": "delpdesignlandingpage",
+  "version": "1.0.0",
+  "description": "Landing page delp design & development",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --no-source-map assets/scss/styles.scss dist/css/styles.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "sass assets/scss/styles.scss dist/styles.css --style compressed",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/styles.css -o dist/styles.css",
+    "build:css": "npm-run-all compile:sass prefix:css",
+    "bundle:js": "webpack"
+  },
+  "author": "Thibaut Delporte",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "emailjs-com": "^3.2.0",
+    "express": "^4.19.2"
+  }
+}

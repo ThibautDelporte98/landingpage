@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    font-family: 'houschka-rounded', sans-serif;
+
+}
+
+body {
+    color: #333;
+    background-color: #FFA500;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.custom-container {
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 660px;
+    @media screen and (max-width: 992px) {
+      max-width: 100%;
+      margin-left: auto;
+    }
+}
+
+.flex-md-row{
+    display: block;
+    @media screen and (min-width:767px) and (max-width:992px) {
+        display: flex;
+    }
+}
+
+.flex-input-row{
+    display: flex;
+    @media screen and (max-width:767px) {
+        display: block;
+    }
+}
+
+
+h3{
+    color: $color-secundairy-2;
+    font-weight: 800;
+    padding: 1rem 0 0 0;
+    @media screen and (max-width:767px) {
+        padding: 2rem 0 0 0 ;
+        font-size: 2rem;
+    }
+}
+
+.ml-2{
+    margin-left: 2rem;
+}
+
+
+a{
+    // display: block;
+    text-decoration: none;
+    color: $color-secundairy-2;
+}
+
+
+
+
+// Custom list
+
+
+.ul{
+    @media screen and (max-width:992px) {
+        padding-left: 1rem;
+    }
+}
+
+ul.custom-list li {
+    position: relative;
+    padding-left: 20px; /* Adjust to make space for the custom disc */
+    margin-bottom: 10px; /* Adjust as needed */
+    list-style-type: none;
+}
+
+ul.custom-list li::before {
+    content: '';
+    position: absolute;
+    left: -.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7.5px; /* Adjust for the size of the disc */
+    height: 7.55px; /* Adjust for the size of the disc */
+    border-radius: 50%; /* Make it a circle */
+    background-color: $color-primairy; /* Your custom color */
+}
+
+
+
+
+// Form validation 
+
+
+.validation-message{
+    position: absolute;
+    bottom: -.5rem;
+    font-size: .8rem;
+    color: red;
+}
+
+
+@media (max-width: 1024px) {
+    .description-container {
+        width: 100%;
+        height: auto; /* Allow height to adjust based on content */
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* Show 4 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        transition: max-height 0.3s ease; /* Smooth transition */
+        max-height: calc(1.5em * 4); /* Adjust this height as needed */
+    }
+    
+    .show-more {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: -3rem;
+        transform: translateX(-50%);
+        background: transparent;
+        color: $color-primairy;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: .8rem;
+        text-align: center;
+        z-index: 1; /* Ensure button is above text */
+    }
+
+    .description-container.expanded .description {
+        -webkit-line-clamp: unset;
+        max-height: none;
+    }
+
+    // .description-container.expanded .show-more {
+    //     display: none;
+    // }
+}
+
+@media (min-width: 1025px) {
+    .show-more {
+        display: block;
+    }
+}
